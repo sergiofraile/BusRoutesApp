@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		494FF80A2079486B00811C18 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494FF8092079486B00811C18 /* Constants.swift */; };
+		494FF80D2079641000811C18 /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494FF80C2079641000811C18 /* RouteCell.swift */; };
+		494FF810207969BC00811C18 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494FF80F207969BC00811C18 /* UIImageView+Extension.swift */; };
+		494FF81220796FED00811C18 /* RouteInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494FF81120796FED00811C18 /* RouteInfoViewController.swift */; };
+		494FF814207970B800811C18 /* RouteStopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494FF813207970B800811C18 /* RouteStopCell.swift */; };
 		4996344220792C5B00DFB17F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996344120792C5B00DFB17F /* AppDelegate.swift */; };
-		4996344420792C5B00DFB17F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996344320792C5B00DFB17F /* ViewController.swift */; };
+		4996344420792C5B00DFB17F /* RoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996344320792C5B00DFB17F /* RoutesViewController.swift */; };
 		4996344720792C5B00DFB17F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996344520792C5B00DFB17F /* Main.storyboard */; };
 		4996344920792C5C00DFB17F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4996344820792C5C00DFB17F /* Assets.xcassets */; };
 		4996344C20792C5C00DFB17F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996344A20792C5C00DFB17F /* LaunchScreen.storyboard */; };
 		4996345720792C5C00DFB17F /* BusRoutesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996345620792C5C00DFB17F /* BusRoutesTests.swift */; };
 		4996346220792C5C00DFB17F /* BusRoutesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996346120792C5C00DFB17F /* BusRoutesUITests.swift */; };
+		499634712079332400DFB17F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499634702079332400DFB17F /* DataManager.swift */; };
+		49963474207933CD00DFB17F /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49963473207933CD00DFB17F /* Route.swift */; };
+		4996347720793B9700DFB17F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996347620793B9700DFB17F /* Request.swift */; };
+		4996347A20793C0E00DFB17F /* RoutesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996347920793C0E00DFB17F /* RoutesRequest.swift */; };
+		4996347C20793E5E00DFB17F /* ServerConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4996347B20793E5E00DFB17F /* ServerConfig.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		494FF8092079486B00811C18 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		494FF80C2079641000811C18 /* RouteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCell.swift; sourceTree = "<group>"; };
+		494FF80F207969BC00811C18 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		494FF81120796FED00811C18 /* RouteInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfoViewController.swift; sourceTree = "<group>"; };
+		494FF813207970B800811C18 /* RouteStopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopCell.swift; sourceTree = "<group>"; };
 		4996343E20792C5B00DFB17F /* BusRoutes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusRoutes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4996344120792C5B00DFB17F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4996344320792C5B00DFB17F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4996344320792C5B00DFB17F /* RoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesViewController.swift; sourceTree = "<group>"; };
 		4996344620792C5B00DFB17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4996344820792C5C00DFB17F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4996344B20792C5C00DFB17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +62,11 @@
 		4996345D20792C5C00DFB17F /* BusRoutesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusRoutesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4996346120792C5C00DFB17F /* BusRoutesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusRoutesUITests.swift; sourceTree = "<group>"; };
 		4996346320792C5C00DFB17F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		499634702079332400DFB17F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		49963473207933CD00DFB17F /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		4996347620793B9700DFB17F /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		4996347920793C0E00DFB17F /* RoutesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesRequest.swift; sourceTree = "<group>"; };
+		4996347B20793E5E00DFB17F /* ServerConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ServerConfig.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +94,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		494FF80B2079640100811C18 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				494FF80C2079641000811C18 /* RouteCell.swift */,
+				494FF813207970B800811C18 /* RouteStopCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		494FF80E207969A500811C18 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				494FF80F207969BC00811C18 /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4996343520792C5A00DFB17F = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +134,21 @@
 		4996344020792C5B00DFB17F /* BusRoutes */ = {
 			isa = PBXGroup;
 			children = (
+				494FF8092079486B00811C18 /* Constants.swift */,
 				4996344120792C5B00DFB17F /* AppDelegate.swift */,
-				4996344320792C5B00DFB17F /* ViewController.swift */,
+				4996344320792C5B00DFB17F /* RoutesViewController.swift */,
+				494FF81120796FED00811C18 /* RouteInfoViewController.swift */,
+				494FF80B2079640100811C18 /* Cells */,
+				499634722079339F00DFB17F /* Models */,
+				4996346F2079331400DFB17F /* Managers */,
+				4996347820793BF500DFB17F /* API */,
+				4996347520793B8A00DFB17F /* Protocols */,
+				494FF80E207969A500811C18 /* Extensions */,
 				4996344520792C5B00DFB17F /* Main.storyboard */,
 				4996344820792C5C00DFB17F /* Assets.xcassets */,
 				4996344A20792C5C00DFB17F /* LaunchScreen.storyboard */,
 				4996344D20792C5C00DFB17F /* Info.plist */,
+				4996347B20793E5E00DFB17F /* ServerConfig.plist */,
 			);
 			path = BusRoutes;
 			sourceTree = "<group>";
@@ -123,6 +169,38 @@
 				4996346320792C5C00DFB17F /* Info.plist */,
 			);
 			path = BusRoutesUITests;
+			sourceTree = "<group>";
+		};
+		4996346F2079331400DFB17F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				499634702079332400DFB17F /* DataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		499634722079339F00DFB17F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49963473207933CD00DFB17F /* Route.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4996347520793B8A00DFB17F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4996347620793B9700DFB17F /* Request.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4996347820793BF500DFB17F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4996347920793C0E00DFB17F /* RoutesRequest.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +309,7 @@
 			files = (
 				4996344C20792C5C00DFB17F /* LaunchScreen.storyboard in Resources */,
 				4996344920792C5C00DFB17F /* Assets.xcassets in Resources */,
+				4996347C20793E5E00DFB17F /* ServerConfig.plist in Resources */,
 				4996344720792C5B00DFB17F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +335,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4996344420792C5B00DFB17F /* ViewController.swift in Sources */,
+				4996344420792C5B00DFB17F /* RoutesViewController.swift in Sources */,
+				494FF80D2079641000811C18 /* RouteCell.swift in Sources */,
+				49963474207933CD00DFB17F /* Route.swift in Sources */,
+				494FF810207969BC00811C18 /* UIImageView+Extension.swift in Sources */,
+				494FF81220796FED00811C18 /* RouteInfoViewController.swift in Sources */,
+				494FF814207970B800811C18 /* RouteStopCell.swift in Sources */,
+				4996347720793B9700DFB17F /* Request.swift in Sources */,
+				499634712079332400DFB17F /* DataManager.swift in Sources */,
+				494FF80A2079486B00811C18 /* Constants.swift in Sources */,
 				4996344220792C5B00DFB17F /* AppDelegate.swift in Sources */,
+				4996347A20793C0E00DFB17F /* RoutesRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
