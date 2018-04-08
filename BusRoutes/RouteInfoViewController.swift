@@ -70,11 +70,11 @@ class RouteInfoViewController: UIViewController, UITableViewDelegate, UITableVie
     cell.label.text = route.stops[indexPath.row]
     
     if indexPath.row == 0 {
-      cell.lineTopConstraint.constant = 35
+      cell.lineTopConstraint.constant = RouteStopCell.height / 2
     }
     
     if indexPath.row == route.stops.count - 1 {
-      cell.lineBottomConstraint.constant = 35
+      cell.lineBottomConstraint.constant = RouteStopCell.height / 2
     }
     
     return cell
