@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// Cell for displaying a stop
+
 class RouteStopCell: UITableViewCell {
   
   // MARK: Statics

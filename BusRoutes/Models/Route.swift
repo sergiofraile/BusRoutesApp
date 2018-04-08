@@ -8,16 +8,20 @@
 
 import Foundation
 
-class Route: Decodable {
+// Route model. Extends form Decodable for a quick creation from the
+// json response from the server API. It does only include the
+// same route information provided by the API.
+
+struct Route: Decodable {
   
   // MARK: Vars
   
-  var id: String
-  var accessible: Bool
-  var imageUrl: String?
-  var name: String
-  var description: String
-  var stops: [String]
+  let id: String
+  let accessible: Bool
+  let imageUrl: String?
+  let name: String
+  let description: String
+  let stops: [String]
   
   // MARK: Coding keys
   
@@ -36,7 +40,7 @@ class Route: Decodable {
   
   // MARK: Init
 
-  required init(from decoder: Decoder) throws {
+  init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: RouteKeys.self)
     self.id = try container.decode(String.self, forKey: .id)
     self.accessible = try container.decode(Bool.self, forKey: .accessible)
@@ -44,12 +48,13 @@ class Route: Decodable {
     self.name = try container.decode(String.self, forKey: .name)
     self.description = try container.decode(String.self, forKey: .description)
     
-    self.stops = []
+    var stops = [String]()
     var stopsNestedArray = try container.nestedUnkeyedContainer(forKey: .stops)
     while (!stopsNestedArray.isAtEnd) {
       let stopContainer = try stopsNestedArray.nestedContainer(keyedBy: StopKeys.self)
       let stopName = try stopContainer.decode(String.self, forKey: .name)
-      self.stops.append(stopName)
+      stops.append(stopName)
     }
+    self.stops = stops
   }
 }

@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// Cell to display a route.
+
 class RouteCell: UITableViewCell {
   
   // MARK: Statics
@@ -21,11 +23,4 @@ class RouteCell: UITableViewCell {
   @IBOutlet weak var label: UILabel!
   @IBOutlet weak var routeImageView: UIImageView!
   
-  // MARK: Life cycle
-  
-//  override func prepareForReuse() {
-//    super.prepareForReuse()
-//    label.text = ""
-//    routeImageView.image = nil
-//  }
 }

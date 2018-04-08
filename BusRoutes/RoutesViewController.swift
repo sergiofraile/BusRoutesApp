@@ -6,7 +6,10 @@
 //  Copyright © 2018 Sergio Fraile. All rights reserved.
 //
 
+import Foundation
 import UIKit
+
+// RoutesViewController displays the list of routes.
 
 class RoutesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
@@ -25,6 +28,7 @@ class RoutesViewController: UIViewController, UITableViewDelegate, UITableViewDa
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Assigning delegates to the tableView.
     tableView.delegate = self
     tableView.dataSource = self
     
@@ -34,7 +38,9 @@ class RoutesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // The data manager will fetch the routes from
     // the server and send an internal notification
-    // for both success and failure outputs
+    // for both success and failure outputs.
+    // We asume there wasn't any data initially loaded
+    // and that this is the first app screen.
     DataManager.sharedInstance.fetchRoutes()
     
     // Adding observer for data loaded
@@ -53,11 +59,7 @@ class RoutesViewController: UIViewController, UITableViewDelegate, UITableViewDa
       object: nil
     )
   }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
-  
+
   deinit {
     NotificationCenter.default.removeObserver(self)
   }
@@ -66,13 +68,20 @@ class RoutesViewController: UIViewController, UITableViewDelegate, UITableViewDa
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showRouteInfo" {
+      // The only parameter required when displaying the route information
+      // is the selected position from the table
       let vc = segue.destination as! RouteInfoViewController
-      vc.route = DataManager.sharedInstance.busRoutes[selectedIndex]
+      vc.selectedIndex = selectedIndex
     }
   }
   
   // MARK: Data observers
   
+  // Handles a sucessfull load of the data from the DataManager.
+  // This method is internally triggered through the RoutesLoadSucess
+  // notification.
+  // An animation is run so the loading display disappears and the
+  // table view appears with all the data loaded.
   @objc func didDataLoad() {
     tableView.reloadData()
     tableView.alpha = 0
@@ -88,6 +97,8 @@ class RoutesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
   }
   
+  // Handles an error during the data loading from the DataManager.
+  // Displays a warning error and tries to fetch the data again.
   @objc func didFailLoadingData() {
     informationLabel.text = "Error loading the data. Trying again..."
     DataManager.sharedInstance.fetchRoutes()
@@ -116,6 +127,8 @@ class RoutesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let route = DataManager.sharedInstance.busRoutes[indexPath.row]
     
     cell.label.text = route.name
+    
+    // The imageFromUrl method is defined in Extensions/UIImageView+Extension.swift
     cell.routeImageView.imageFromUrl(stringUrl: route.imageUrl, withPlaceholder: "filledBus")
     
     return cell

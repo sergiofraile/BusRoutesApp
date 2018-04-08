@@ -12,6 +12,8 @@ enum Result<Value> {
   case failure(Error)
 }
 
+// Request protocol that defines a Handler, being this a completion block, with an assocaited type of Response.
+// This protocol also defines a peform method.
 protocol Request {
   associatedtype Response
   

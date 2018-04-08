@@ -91,8 +91,8 @@
 		4996344020792C5B00DFB17F /* BusRoutes */ = {
 			isa = PBXGroup;
 			children = (
-				494FF8092079486B00811C18 /* Constants.swift */,
 				4996344120792C5B00DFB17F /* AppDelegate.swift */,
+				494FF8092079486B00811C18 /* Constants.swift */,
 				4996344320792C5B00DFB17F /* RoutesViewController.swift */,
 				494FF81120796FED00811C18 /* RouteInfoViewController.swift */,
 				494FF80B2079640100811C18 /* Cells */,
