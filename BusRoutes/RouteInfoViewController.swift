@@ -87,11 +87,14 @@ class RouteInfoViewController: UIViewController, UITableViewDelegate, UITableVie
   func updateRouteChange() {
     // Because we may have scrolled down for seeing the routes, we scroll the table view all the
     // way up to the top before changing the content.
-    // ToDo
-    //    tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-    tableView.setContentOffset( CGPoint(x: 0, y: 0) , animated: true)
-    setupRouteHeader()
-    tableView.reloadData()
+    
+    self.tableView.setContentOffset(.zero, animated: false)
+    // Small delay as scrolling up would intefer with the table reloading
+    // and provoque the scroll to end up abrouptly in the middle of the page
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+      self.setupRouteHeader()
+      self.tableView.reloadData()
+    })
   }
   
   // MARK: Table View Delegate
