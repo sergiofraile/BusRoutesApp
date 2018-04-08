@@ -35,8 +35,6 @@ class RouteInfoViewController: UIViewController, UITableViewDelegate, UITableVie
     setupRouteHeader()
   }
   
-  
-  
   // MARK: Setup
   
   func setupRouteHeader() {
@@ -67,7 +65,18 @@ class RouteInfoViewController: UIViewController, UITableViewDelegate, UITableVie
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: RouteStopCell.cellReuseIdentifier, for: indexPath) as! RouteStopCell
-    cell.label.text = "This is a stop"
+    guard let route = route, route.stops.count > 0 else { return cell }
+    
+    cell.label.text = route.stops[indexPath.row]
+    
+    if indexPath.row == 0 {
+      cell.lineTopConstraint.constant = 35
+    }
+    
+    if indexPath.row == route.stops.count - 1 {
+      cell.lineBottomConstraint.constant = 35
+    }
+    
     return cell
   }
 }

@@ -23,9 +23,9 @@ class RouteCell: UITableViewCell {
   
   // MARK: Life cycle
   
-  override func prepareForReuse() {
-    super.prepareForReuse()
-    label.text = ""
-    routeImageView.image = nil
-  }
+//  override func prepareForReuse() {
+//    super.prepareForReuse()
+//    label.text = ""
+//    routeImageView.image = nil
+//  }
 }

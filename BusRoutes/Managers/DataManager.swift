@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class DataManager {
   
@@ -18,6 +19,7 @@ class DataManager {
   
   let apiEndPoint = "http://www.mocky.io/v2/5a0b474a3200004e08e963e5"
   let routesRequest = RoutesRequest()
+  let imagesCache = NSCache<NSString, UIImage>()
   
   // MARK: Variables
   

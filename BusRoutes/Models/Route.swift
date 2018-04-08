@@ -30,6 +30,10 @@ class Route: Decodable {
     case stops
   }
   
+  private enum StopKeys: String, CodingKey {
+    case name
+  }
+  
   // MARK: Init
 
   required init(from decoder: Decoder) throws {
@@ -39,11 +43,13 @@ class Route: Decodable {
     self.imageUrl = try container.decode(String?.self, forKey: .imageUrl) ?? nil
     self.name = try container.decode(String.self, forKey: .name)
     self.description = try container.decode(String.self, forKey: .description)
-    let stopsArray = try container.nestedUnkeyedContainer(forKey: .stops)
-//    Log("Stops array \(stopsArray)"
+    
     self.stops = []
-//    let superDecoder = try container.superDecoder()
-//    try super.init(from: superDecoder)
+    var stopsNestedArray = try container.nestedUnkeyedContainer(forKey: .stops)
+    while (!stopsNestedArray.isAtEnd) {
+      let stopContainer = try stopsNestedArray.nestedContainer(keyedBy: StopKeys.self)
+      let stopName = try stopContainer.decode(String.self, forKey: .name)
+      self.stops.append(stopName)
+    }
   }
-
 }

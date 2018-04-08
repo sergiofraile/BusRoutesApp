@@ -116,7 +116,7 @@ class RoutesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let route = DataManager.sharedInstance.busRoutes[indexPath.row]
     
     cell.label.text = route.name
-    cell.imageView?.imageFromUrl(stringUrl: route.imageUrl, withPlaceholder: "filledBus")
+    cell.routeImageView.imageFromUrl(stringUrl: route.imageUrl, withPlaceholder: "filledBus")
     
     return cell
   }
